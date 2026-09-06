@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universal Theme Customizer</title>
+  <style>
+    body {
+      width: 260px;
+      margin: 0;
+      padding: 16px;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background-color: #f8fafc;
+      color: #0f172a;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+      color: #1e293b;
+      text-align: center;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-dark {
+      background-color: #0f172a;
+      color: #f8fafc;
+    }
+
+    .btn-dark:hover {
+      background-color: #1e293b;
+    }
+
+    .btn-light {
+      background-color: #e2e8f0;
+      color: #0f172a;
+    }
+
+    .btn-light:hover {
+      background-color: #cbd5e1;
+    }
+
+    .custom-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 4px;
+      padding-top: 12px;
+      border-top: 1px solid #cbd5e1;
+    }
+
+    .custom-container label {
+      font-size: 14px;
+      font-weight: 500;
+      color: #334155;
+    }
+
+    input[type="color"] {
+      -webkit-appearance: none;
+      appearance: none;
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      cursor: pointer;
+      padding: 0;
+      background: none;
+    }
+
+    input[type="color"]::-webkit-color-swatch-wrapper {
+      padding: 0;
+    }
+
+    input[type="color"]::-webkit-color-swatch {
+      border: 2px solid #cbd5e1;
+      border-radius: 6px;
+    }
+
+    .notice {
+      font-size: 11px;
+      color: #64748b;
+      text-align: center;
+      line-height: 1.4;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Theme Customizer</h2>
+  <button id="darkModeBtn" class="btn btn-dark">Dark Mode</button>
+  <button id="lightModeBtn" class="btn btn-light">Reset / Light Mode</button>
+
+  <div class="custom-container">
+    <label for="customTintPicker">Custom Tint</label>
+    <input type="color" id="customTintPicker" value="#f5deb3">
+  </div>
+
+  <div class="notice">
+    <strong>Note:</strong> For local PDFs (file:// URLs), enable "Allow access to file URLs" in Chrome's extension
+    settings.
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>

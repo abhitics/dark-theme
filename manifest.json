@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Universal Theme Customizer",
+  "version": "1.0.0",
+  "description": "Toggle between dark mode, light mode, and custom color tints dynamically on all webpages and PDFs.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Theme Customizer"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
+}
